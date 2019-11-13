@@ -113,7 +113,7 @@ return a + b
 */
 function processProduct(num1,num2, callback) {
   return callback(num1 * num2);
-}
+};
 
 /**
  * ### Challenge `processContains`
@@ -135,8 +135,9 @@ function processProduct(num1,num2, callback) {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
 */
-function processContains(/* CODE HERE */) {
-  /* CODE HERE */
+function processContains(item,list,callback) {
+  
+  return callback(item.includes(item));
 }
 
 /**
@@ -180,8 +181,12 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+function getFullNames(runners) {
+  let runnerName = [];
+  runnerName.forEach(function(runners) {
+    return runnerName.push(`${runners.last_name}, ${runners.first_name}`);
+  });
+  return runnerName;
 }
 
 /**
@@ -276,8 +281,16 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
-  /* CODE HERE */
+function counterMakerWithLimit(countLimit) {
+  let count = -1;
+  return function counter(){
+    if (count < countLimit){
+    return ++count;
+  }
+  else {
+    return count=0;
+  }
+}
 }
 
 /////////////// END OF CHALLENGE ///////////////
